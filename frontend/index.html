@@ -68,7 +68,7 @@
         }
 
         $scope.decrypt = function () {
-          $scope.plainTextDecrypt = CryptoJS.AES.decrypt($scope.cipherText, $scope.keyDecrypt).toString(CryptoJS.enc.Utf8)
+          $scope.plainTextDecrypt = CryptoJS.AES.decrypt($scope.cipherTextForDecrypt, $scope.keyDecrypt).toString(CryptoJS.enc.Utf8);
         }
       });
     </script>
