@@ -27,7 +27,7 @@
           <button ng-click="encrypt()">Encrypt</button>
           <div class="container-result">
             <label for="resultCipher">Result encrypted</label>
-            <div class="result" id="resultCipher">{{ cipherText }}</div>
+            <!-- <div class="result" id="resultCipher">{{ cipherText }}</div> -->
           </div>
         </div>
         <div class="card">
@@ -43,7 +43,7 @@
           <button ng-click="decrypt()">Decrypt</button>
           <div class="container-result">
             <label for="resultCipher">Result Decrypted</label>
-            <div class="result" id="resultCipher">{{ plainTextDecrypt }}</div>
+            <!-- <div class="result" id="resultCipher">{{ plainTextDecrypt }}</div> -->
           </div>
         </div>
       </div>
@@ -65,10 +65,12 @@
 
         $scope.encrypt = function () {
           $scope.cipherText = CryptoJS.AES.encrypt($scope.plainTextEncrypt, $scope.keyEncrypt).toString();
+          alert($scope.cipherText)
         }
 
         $scope.decrypt = function () {
           $scope.plainTextDecrypt = CryptoJS.AES.decrypt($scope.cipherTextForDecrypt, $scope.keyDecrypt).toString(CryptoJS.enc.Utf8);
+          alert($scope.plainTextDecrypt)
         }
       });
     </script>
